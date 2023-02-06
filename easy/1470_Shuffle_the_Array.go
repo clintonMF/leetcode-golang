@@ -60,6 +60,21 @@ slice. i.e nums = []int{}.
 - return nums
 
 SECOND SOLUTION (shuffle)
+IDEA
+- A close inspection of the shuffle condition reveals that we
+are expected to arrange the element according to the index below
+1, n+1, 2, n+2, ...., n-1, 2n - 1
+- If it is not clear, you can toy with the first solution.
+The element at index i in the second array is the element at
+index n + i in the first array. You can test this out
+CODE
+- We create a new array called res which is an array of integers
+- we loop through half of the element positions in nums and get
+their index (i)
+	- We then append the ith element
+	- followed by the (n+i)th element
+- return res
+
 
 */
 func shuffle1(nums []int, n int) []int {
