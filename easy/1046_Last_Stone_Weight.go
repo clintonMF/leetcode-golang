@@ -38,6 +38,30 @@ package main
 
 import "sort"
 
+/* EXPLANATION
+IDEA
+- A sorted array will have its highest values as the last
+2 elements. If they are equal we can remove them, else we
+make the second to the last equal to their difference.
+- we can repeat the process above until the length of
+our array is less than 2.
+- then we return the appropriate answer.
+
+CODE
+- run a while loop with the condition that length of stones
+greater than 1.
+	- sort the values in stone
+	- check if the last 2 elements of the sorted array are equal
+	- if they are, remove them: this is done by slicing the last
+	2 elements out.
+	- if they are not, update the value of the last element to
+	the difference between the last 2 element. Then slice off
+	the last element
+- If the length of stones is equal to 1. return the only element
+in the array.
+- Else return 0.
+*/
+
 func lastStoneWeight(stones []int) int {
 	for len(stones) > 1 {
 		sort.Ints(stones)
