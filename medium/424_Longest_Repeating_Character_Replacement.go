@@ -58,11 +58,6 @@ number of highest occurring character
 - with each loop we will check to update the value of the longest substring
 i.e res = max(res, r-l+1). res, is short for result.
 
-*NOTE: if you struggle to understand the solution, you can replace the
-* use of maxF by actually searching for the value of the highest occurring
-* character in the list. You'd have to search for this is in the for loop.
-* - also you don't have to get it on the first try. Take a break and
-* come back later.
 
 Code
 - create a function that returns the max integer between two integers
@@ -75,14 +70,21 @@ l - the left window (which we will slide)
 res - The max length of valid substring
 
 - run a for loop over the length of the string
-	- add the current character to the map
-	- Try to update the value of maxF
-	- Check if we meet the k condition
-	- if we don't reduce the count of the character
-	at index l and increment l.
-	- update the value of res if we have a longer substring
+- add the current character to the map
+- Try to update the value of maxF
+- Check if we meet the k condition
+- if we don't reduce the count of the character
+at index l and increment l.
+- update the value of res if we have a longer substring
 
 - return res
+
+*NOTE: if you struggle to understand the solution, you can replace the
+* use of maxF by actually searching for the value of the highest occurring
+* character in the list. You'd have to search for this is in the for loop.
+* - also you don't have to get it on the first try. Take a break and
+* come back later.
+
 */
 func max(a, b int) int {
 	if a > b {
